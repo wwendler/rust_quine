@@ -4,12 +4,8 @@
 
 fn main() {
     program("{", "}", "\"", "\\");
-    program("{open_bracket}", "{close_bracket}", "{quote}", "{backslash}");
-    println!("\",
-        open_bracket = open_bracket,
-        close_bracket = close_bracket,
-        quote = quote,
-        backslash = backslash);
+    program("{0}", "{1}", "{2}", "{3}");
+    println!("\", open_bracket, close_bracket, quote, backslash);
 }}");
 }
 
@@ -18,21 +14,13 @@ fn program(open_bracket : &str, close_bracket : &str, quote : &str, backslash : 
 //!
 //! A quine in rust, written by wwendler
 
-fn main() {open_bracket}
-    program({quote}{open_bracket}{quote}, {quote}{close_bracket}{quote}, {quote}{backslash}{quote}{quote}, {quote}{backslash}{backslash}{quote});
-    program({quote}{open_bracket}open_bracket{close_bracket}{quote}, {quote}{open_bracket}close_bracket{close_bracket}{quote}, {quote}{open_bracket}quote{close_bracket}{quote}, {quote}{open_bracket}backslash{close_bracket}{quote});
-    println!({quote}{backslash}{quote},
-        open_bracket = open_bracket,
-        close_bracket = close_bracket,
-        quote = quote,
-        backslash = backslash);
-{close_bracket}{close_bracket}{quote});
-{close_bracket}
+fn main() {0}
+    program({2}{0}{2}, {2}{1}{2}, {2}{3}{2}{2}, {2}{3}{3}{2});
+    program({2}{0}0{1}{2}, {2}{0}1{1}{2}, {2}{0}2{1}{2}, {2}{0}3{1}{2});
+    println!({2}{3}{2}, open_bracket, close_bracket, quote, backslash);
+{1}{1}{2});
+{1}
 
-fn program(open_bracket : &str, close_bracket : &str, quote : &str, backslash : &str) {open_bracket}
-    print!({quote}",
-        open_bracket = open_bracket,
-        close_bracket = close_bracket,
-        quote = quote,
-        backslash = backslash);
+fn program(open_bracket : &str, close_bracket : &str, quote : &str, backslash : &str) {0}
+    print!({2}", open_bracket, close_bracket, quote, backslash);
 }
